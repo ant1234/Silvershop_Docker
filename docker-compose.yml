@@ -22,3 +22,9 @@ services:
         - '3306:3306'
     environment:
         - MYSQL_ALLOW_EMPTY_PASSWORD=1
+  composer_installation:
+    container_name: composer_installation
+    image: composer
+    volumes:
+      - ./:/app
+    command: composer install --ignore-platform-reqs
